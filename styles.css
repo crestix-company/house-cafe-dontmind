@@ -485,25 +485,25 @@ nav a:hover {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
-.hours-card.summer-hours.active {
+.hours-card.regular-hours {
     border-color: var(--accent-color);
-    background-color: #fffaf0; /* Warm light yellow background for summer */
+    background-color: #fffaf0;
+    scroll-margin-top: 110px;
 }
 
-.badge-summer {
-    position: absolute;
-    top: -12px;
-    left: 24px;
-    background-color: var(--accent-color);
-    color: white;
-    font-weight: bold;
-    padding: 4px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    box-shadow: 0 4px 8px rgba(247, 167, 49, 0.3);
-    display: flex;
-    align-items: center;
-    gap: 6px;
+.summer-hours summary {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.summer-hours summary:focus-visible {
+    outline: 2px solid var(--text-color);
+    outline-offset: 6px;
+    border-radius: 4px;
+}
+
+.summer-hours[open] summary {
+    margin-bottom: 12px;
 }
 
 .hours-card h3 {
@@ -520,6 +520,10 @@ nav a:hover {
     font-size: 0.85rem;
     color: #8c7b70;
     margin-bottom: 16px;
+}
+
+.hours-card h3 span {
+    display: inline-block;
 }
 
 .hours-group {
@@ -554,6 +558,8 @@ nav a:hover {
     font-size: 0.95rem;
     margin-bottom: 4px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 0 12px;
     justify-content: space-between;
     width: 100%;
 }
@@ -562,13 +568,20 @@ nav a:hover {
     color: var(--text-color);
 }
 
-.hours-card.regular-hours {
-    opacity: 0.85;
-    background-color: #faf8f5;
+.hours-card li span {
+    white-space: nowrap;
 }
 
-.hours-card.regular-hours h3 {
-    color: #7a6a5e;
+.hours-note {
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+
+.morning-note {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    border-top: 1px solid #e4d4b8;
+    padding-top: 16px;
 }
 
 .holiday-card {
@@ -593,6 +606,13 @@ nav a:hover {
     font-weight: bold;
     color: #c92a2a;
     margin: 0;
+}
+
+.holiday-card .holiday-note {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 8px;
 }
 
 /* Footer */
